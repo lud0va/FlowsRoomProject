@@ -1,10 +1,12 @@
-package com.example.flowsapp.ui.loginfragment
+package com.example.flowsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.flowsapp.R
+import com.example.flowsapp.databinding.MainBottomBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 

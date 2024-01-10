@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/primerFragment"
-        android:name="com.example.myapplicatione.ui.mainfragment.MainFragment"
+        android:name="com.example.flowsapp.ui.loginfragment.LoginFragment"
         android:label="primero"
         tools:layout="@layout/activity_maind">
 
