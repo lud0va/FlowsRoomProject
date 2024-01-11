@@ -22,7 +22,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
 
             android:layout_gravity="center"
             android:text="@string/app_name" />
@@ -39,7 +39,8 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavView"/>
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavView"
+       />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
@@ -48,8 +49,8 @@
         android:layout_height="wrap_content"
 
         app:itemActiveIndicatorStyle="@null"
-        app:itemIconTint="@color/design_default_color_on_primary"
-        app:itemTextColor="@color/design_default_color_on_primary"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

@@ -1,4 +1,9 @@
 package com.example.flowsapp.ui.registerfragment
 
-class RegisterFragment {
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class RegisterFragment: Fragment() {
 }

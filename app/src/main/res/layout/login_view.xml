@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.loginfragment.LoginFragment"
+    >
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/idlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintVertical_bias="0.732" />
 
     <EditText
         android:id="@+id/emailtext"
@@ -23,13 +26,13 @@
         android:layout_marginTop="136dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:text="@string/email"
+        app:layout_constraintBottom_toTopOf="@+id/idlogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <EditText
         android:id="@+id/passwordtext"
@@ -38,11 +41,23 @@
         android:layout_marginTop="88dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:text="@string/password"
+        app:layout_constraintBottom_toTopOf="@+id/idlogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailtext"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/passwordoOvidada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:text="@string/constrase_a_olvidada"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/idlogin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.732" />
 </androidx.constraintlayout.widget.ConstraintLayout>
