@@ -63,6 +63,8 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.6.2") //necesaria
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4") //mirar si se puede quitar
 
+    implementation("androidx.datastore:datastore-core:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
