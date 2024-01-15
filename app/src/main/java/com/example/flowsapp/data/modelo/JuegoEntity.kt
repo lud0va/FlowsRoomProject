@@ -1,12 +1,29 @@
 package com.example.flowsapp.data.modelo
 
+import androidx.annotation.NonNull
+import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.example.flowsapp.domain.modelo.Juego
 
-@Entity(tableName = "juego")
+@Entity(
+    tableName = "juego",
+    foreignKeys = [
+        ForeignKey(entity = JugadorEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["idJugador"])
+    ],
+    indices = [Index("idJugador")]
+)
 class JuegoEntity(
+    @NonNull
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
+    @ColumnInfo("idJugador")
     val idJugador: Int,
+    @ColumnInfo("nombre")
     val juego: String
 
 )

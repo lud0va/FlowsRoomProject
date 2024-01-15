@@ -6,17 +6,18 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.flowsapp.R
+import com.example.flowsapp.databinding.ItemActivityBinding
 import com.example.flowsapp.databinding.MainBottomBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ItemsActivity : AppCompatActivity() {
-    private lateinit var binding: MainBottomBinding
+    private lateinit var binding: ItemActivityBinding
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = MainBottomBinding.inflate(layoutInflater)
+        binding = ItemActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUI()
     }

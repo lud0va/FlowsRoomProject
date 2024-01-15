@@ -4,5 +4,6 @@ data class LoginState(
     val emal:String?,
     val password:String?,
     val idLoading:Boolean=false,
-    val  error:String?=null
+    val  error:String?=null,
+
 )

@@ -4,8 +4,8 @@ interface LoginContract {
     sealed class Event {
 
         object hacerlogin : Event()
-        object mostrarMensaje: Event()
-        object  passwordolvidada:Event()
+        object passwordOlvidada:Event()
+        object  register:Event()
 
     }
 
@@ -13,7 +13,7 @@ interface LoginContract {
         val email:String?=null,
         val password:String?=null,
         val idLoading:Boolean=false,
-        val  error:String?=null
-
+        val  error:String?=null,
+        val loginsucces:Boolean=false
         )
 }

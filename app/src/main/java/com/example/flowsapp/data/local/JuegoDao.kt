@@ -12,17 +12,17 @@ import com.example.flowsapp.data.modelo.JuegoEntity
 @Dao
 interface JuegoDao {
     @Query("Select * FROM juego")
-    fun getAll(): List<JuegoEntity>
+    suspend   fun getAll(): List<JuegoEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(juego: List<JuegoEntity>)
+    suspend  fun insertAll(juego: List<JuegoEntity>)
 
     @Delete
-    fun delete(id:Int)
+    suspend  fun delete(juego:JuegoEntity)
 
     @Update
-    fun update(juegoEntity: JuegoEntity)
+    suspend  fun update(juegoEntity: JuegoEntity)
 
     @Delete
-    fun deleteAll(juego: List<JuegoEntity>)
+    suspend  fun deleteAll(juego: List<JuegoEntity>)
 }

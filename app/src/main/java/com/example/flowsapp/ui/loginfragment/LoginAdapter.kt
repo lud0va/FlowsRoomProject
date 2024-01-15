@@ -29,6 +29,15 @@ class LoginAdapter:ListAdapter<Usuario,LoginAdapter.ItemViewholder>(DiffCallback
 
         private val binding = LoginViewBinding.bind(itemView)
 
+        private fun setupClickListeners(email:String,cambiarPantalla:Unit,cambiarPassw:(String)->Unit){
+            binding.idlogin.setOnClickListener {
+                cambiarPantalla
+            }
+            binding.passwordoOvidada.setOnClickListener {
+                cambiarPassw(email)
+            }
+
+        }
 
     }
 

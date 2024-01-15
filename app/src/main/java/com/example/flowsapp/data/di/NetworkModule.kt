@@ -8,6 +8,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import com.example.flows.network.AuthInterceptor
+import com.example.flowsapp.network.services.JuegoService
+import com.example.flowsapp.network.services.JugadorService
+import com.example.flowsapp.network.services.LoginService
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.ToJson
@@ -71,15 +74,21 @@ object NetworkModule {
             .build()
     }
 
-   /* @Singleton
+    @Singleton
     @Provides
-    fun provideCurrencyService(retrofit: Retrofit): EquiposService =
-        retrofit.create(EquiposService::class.java)
+    fun provideJugadoresService(retrofit: Retrofit): JugadorService =
+        retrofit.create(JugadorService::class.java)
 
     @Singleton
     @Provides
-    fun provideOrderService(retrofit: Retrofit): JugadoresServices =
-        retrofit.create(JugadoresServices::class.java)*/
+    fun provideJuegoService(retrofit: Retrofit): JuegoService =
+        retrofit.create(JuegoService::class.java)
+
+
+    @Singleton
+    @Provides
+    fun provideLoginService(retrofit: Retrofit): LoginService =
+        retrofit.create(LoginService::class.java)
 }
 
 

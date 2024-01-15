@@ -4,6 +4,7 @@ import com.example.flows.data.remote.BaseApiResponse
 import com.example.flows.utils.NetworkResult
 import com.example.flowsapp.data.modelo.JuegoDesc
 import com.example.flowsapp.data.modelo.JugadorDesc
+import com.example.flowsapp.data.modelo.JugadoresResponse
 import com.example.flowsapp.domain.modelo.Jugador
 import com.example.flowsapp.network.services.JuegoService
 import com.example.flowsapp.network.services.JugadorService
@@ -21,15 +22,16 @@ class JugadoresRemoteDataSource @Inject constructor(private val jugadorService: 
 
     }
 
-    suspend fun deleteJugador(id: Int):NetworkResult<Void> {
-        return safeApiCall(apiCall = {jugadorService.deleteJugador(id)})
+    suspend fun deleteJugador(id: Int): NetworkResult<Void> {
+        return safeApiCall(apiCall = { jugadorService.deleteJugador(id) })
     }
 
-    suspend fun addJugador(jugador: Jugador):NetworkResult<Void>{
-        return safeApiCall(apiCall = {jugadorService.addJugador(jugador)})
+    suspend fun addJugador(jugador: Jugador): NetworkResult<Void> {
+        return safeApiCall(apiCall = { jugadorService.addJugador(jugador) })
     }
-    suspend fun updateJugador(jugador: Jugador):NetworkResult<Void>{
-        return safeApiCall(apiCall = {jugadorService.updateJugador(jugador)})
+
+    suspend fun updateJugador(jugador: Jugador): NetworkResult<Void> {
+        return safeApiCall(apiCall = { jugadorService.updateJugador(jugador) })
     }
 
 

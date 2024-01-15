@@ -13,18 +13,21 @@ import com.example.flowsapp.data.modelo.JuegoEntity
 interface AutorDao {
 
     @Query("Select * FROM autor")
-    fun getAll(): List<AutorEntity>
+   suspend fun getAll(): List<AutorEntity>
 
-    @Query("Select * FROM autor WHERE id=id")
-    fun getAutor(id:Int):AutorEntity
+    @Query("Select * FROM autor WHERE id= :id")
+    suspend   fun getAutor(id:Int):AutorEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(movies: List<AutorEntity>)
+    suspend   fun insertAll(autor: List<AutorEntity>)
 
-    @Delete
-    fun delete(aitpr: AutorEntity)
+ @Insert(onConflict = OnConflictStrategy.REPLACE)
+ suspend   fun insert(autorEntity: AutorEntity)
+
+ @Delete
+    suspend  fun delete(aitpr: AutorEntity)
     @Update
-    fun update(autorEntity: AutorEntity)
+    suspend  fun update(autorEntity: AutorEntity)
     @Delete
-    fun deleteAll(autor: List<AutorEntity>)
+    suspend fun deleteAll(autor: List<AutorEntity>)
 }

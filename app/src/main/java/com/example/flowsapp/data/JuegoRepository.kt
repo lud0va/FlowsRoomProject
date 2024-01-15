@@ -55,14 +55,14 @@ class JuegoRepository @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
-    fun deleteJuego(id: Int):Flow<NetworkResult<Void>>{
+    fun deleteJuego(id: Int,juegoEntity: JuegoEntity):Flow<NetworkResult<Void>>{
         return flow {
             emit(NetworkResult.Loading())
             val result=juegoRemoteDataSource.deleteGame(id)
             emit(result)
             if (result is NetworkResult.Success){
                 result.data?.let {it->
-                    juegoDao.delete(id)
+                    juegoDao.delete(juegoEntity)
 
                 }
             }

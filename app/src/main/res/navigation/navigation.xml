@@ -3,24 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/jugadoresFragment">
+
+
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.flowsapp.ui.loginfragment.LoginFragment"
-        android:label="@string/login"
-        tools:layout="@layout/login_view">
+        android:id="@+id/jugadoresFragment"
+        android:name="com.example.flowsapp.ui.jugadoresfragment.JugadoresFragment"
+        tools:layout="@layout/jugadoresfragment">
+        <action
+            android:id="@+id/jugadorToDetalle"
+            app:destination="@id/jugadorDetalle"
+            >
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/autoresFragment"
+        android:name="com.example.flowsapp.ui.autoresfragment.AutoresFragment"
+        tools:layout="@layout/autorfragment"
+        >
+        <action
+            android:id="@+id/autorToDetalle"
+            app:destination="@id/autorDetalleFragment">
+
+        </action>
 
 
     </fragment>
     <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.flowsapp.ui.registerfragment.RegisterFragment"
-        android:label="primero"
-        tools:layout="@layout/register_view">
+        android:id="@+id/autorDetalleFragment"
+        android:name="com.example.flowsapp.ui.autoresfragment.detalle.AutorDetalle"
+        tools:layout="@layout/autordetalle"
+        >
 
-
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
-
-
+    <fragment
+        android:id="@+id/jugadorDetalle"
+        tools:layout="@layout/jugadordetalle"
+        ></fragment>
 </navigation>

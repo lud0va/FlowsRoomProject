@@ -1,5 +1,6 @@
 package com.example.flowsapp.data.local
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -7,25 +8,25 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.flowsapp.data.modelo.AutorEntity
 import com.example.flowsapp.data.modelo.LibroEntity
-
+@Dao
 interface LibroDao {
 
     @Query("Select * FROM libro")
-    fun getAll(): List<LibroEntity>
+    suspend fun getAll(): List<LibroEntity>
 
-    @Query("Select * FROM libro WHERE id=id")
-    fun getLibro(id:Int):LibroEntity
+    @Query("Select * FROM libro WHERE idautor= :idautor")
+    suspend   fun getLibro(idautor:Int):List<LibroEntity>
     @Insert
-    fun insert(libro:LibroEntity)
+    suspend fun insert(libro:LibroEntity)
 
     @Update
-    fun update(libro: LibroEntity)
+    suspend  fun update(libro: LibroEntity)
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(movies: List<LibroEntity>)
+    suspend  fun insertAll(movies: List<LibroEntity>)
 
     @Delete
-    fun delete(libro: LibroEntity)
+    suspend  fun delete(libro: LibroEntity)
 
     @Delete
-    fun deleteAll(libros: List<LibroEntity>)
+    suspend fun deleteAll(libros: List<LibroEntity>)
 }
